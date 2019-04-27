@@ -39,7 +39,7 @@ Vue.component('p5', {
 
 })
 
-// Sets up the main Vue instane
+// Sets up the main Vue instance
 
 var app = new Vue({
   el: '#root',
