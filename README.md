@@ -19,3 +19,5 @@ The input sliders are bound to this data, meaning the slider & data variables ar
 Each p5 sketch is loaded using a custom `<p5>` Vue component. The sketches can access `sourceData` as a property. So, if we move the sliders, or update the value of `app.sourceData.x`, both p5 sketches will access the updated data.
 
 This example has a top-down, one-way flow of information, where data flows from the top layer into the sketches. Ideally, the sketches should not modify the sourceData directly, in keeping with the principle of [one-way data flow](https://vuejs.org/v2/guide/components-props.html#One-Way-Data-Flow). If we need two-way communication (where the sketches can update the sourceData) the sketch component should emit an event that we listen for in the top layer to update the data.
+
+**Note:** If you just want multiple *independent* p5 canvases on a page and you don't need them to share data with any other components, then using a framework like Vue is overkill. Instead, take a look at [this tutorial](http://joemckaystudio.com/multisketches/).
