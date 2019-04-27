@@ -10,7 +10,7 @@ We can load in a component with the following command:
 <p5 src="./sketch.js" :data="sourceData"></p5>
 ```
 
-where `sketch.js` points to the p5 code, and the sketch is [bound](https://v1.vuejs.org/guide/syntax.html) to a `sourceData` object.
+where `sketch.js` points to the p5 code (written in ['instance mode'](https://github.com/processing/p5.js/wiki/Global-and-instance-mode)), and the sketch is [bound](https://v1.vuejs.org/guide/syntax.html) to a `sourceData` object.
 
 In this example, the `sourceData` object holds an x & y position and is defined in the [Vue instance](https://github.com/aatishb/p5-vue-starter/blob/master/vue-definitions.js#L48-L55). You can think of the Vue instance as the top layer, which holds the [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth) for all shared, dynamic variables. You can inspect this data in the console by typing `app.sourceData.x` or `app.sourceData.y`.
 
