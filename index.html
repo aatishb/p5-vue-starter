@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <!-- Load in libraries here -->
   <script src="https://unpkg.com/vue"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
 </head>
+
 <body>
 
-  <div id="root">
+<div id="root"> <!-- Vue can only access things contained within this div -->
 
-    <input type="range" min="0" max="400" step="1" v-model="sourceData.x"></input>
-    <input type="range" min="0" max="400" step="1" v-model="sourceData.y"> </input>
+  <!-- Some input elements that are bound to sourceData -->
+  <input type="range" min="0" max="400" step="1" v-model="sourceData.x"></input>
+  <input type="range" min="0" max="400" step="1" v-model="sourceData.y"> </input>
 
-    <p5 src="./sketch1.js" :data="sourceData"></p5>
+  <!-- Vue components for p5 sketches, also bound to sourceData -->
+  <p5 src="./sketch1.js" :data="sourceData"></p5>
+  <p5 src="./sketch2.js" :data="sourceData"></p5>
 
-    <p5 src="./sketch2.js" :data="sourceData"></p5>
+</div>
 
-  </div>
-
-  <script src="app.js"></script>
+<script src="vue-definitions.js"></script>
 
 </body>
 </html>

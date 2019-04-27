@@ -1,4 +1,5 @@
-// defining p5 component
+// Defines a Vue <p5> Component
+
 Vue.component('p5', {
 
   template: '<div ref="holder"></div>',
@@ -7,6 +8,7 @@ Vue.component('p5', {
 
   methods: {
     // loadScript from https://stackoverflow.com/a/950146
+    // loads the p5 javscript code from a file
     loadScript: function (url, callback)
     {
       // Adding the script tag to the head as suggested before
@@ -32,19 +34,21 @@ Vue.component('p5', {
   },
 
   mounted() {
-
-    //let local = this;
     this.loadScript(this.src, this.loadSketch);
-
-
   }
 
 })
+
+// Sets up the main Vue instane
 
 var app = new Vue({
   el: '#root',
 
   data: {
+    // Edit sourceData to store any 'global' variables
+    // i.e. data that will be accessible to multiple components in your page
+    // You should not store any local data here
+    // i.e. data that is specific to a single component
     sourceData: {
       x: 10,
       y: 10
