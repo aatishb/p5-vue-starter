@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+</head>
+<body>
+
+  <div id="root">
+
+    <input type="range" min="0" max="400" step="1" v-model="sourceData.x"></input>
+    <input type="range" min="0" max="400" step="1" v-model="sourceData.y"> </input>
+
+    <p5-sketch src="./sketch1.js" :data="sourceData"></p5-sketch>
+
+    <p5-sketch src="./sketch2.js" :data="sourceData"></p5-sketch>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
