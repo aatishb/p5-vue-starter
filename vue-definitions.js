@@ -50,8 +50,8 @@ var app = new Vue({
     // You should not store any local data here
     // i.e. data that is specific to a single component
     sourceData: {
-      x: 10,
-      y: 10
+      x: 200,
+      y: 100
     }
   }
 

@@ -13,7 +13,7 @@
 
   <!-- Some input elements that are bound to sourceData -->
   <input type="range" min="0" max="400" step="1" v-model="sourceData.x"></input>
-  <input type="range" min="0" max="400" step="1" v-model="sourceData.y"> </input>
+  <input type="range" min="0" max="200" step="1" v-model="sourceData.y"> </input>
 
   <!-- Vue components for p5 sketches, also bound to sourceData -->
   <p5 src="./sketch1.js" :data="sourceData"></p5>

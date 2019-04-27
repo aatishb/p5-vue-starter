@@ -5,6 +5,7 @@ function sketch(data, holder) {
     p.setup = function() {
       let canvas = p.createCanvas(400, 200);
       canvas.parent(holder);
+      p.rectMode(p.CENTER);
     };
 
     p.draw = function() {

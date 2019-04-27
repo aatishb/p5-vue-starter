@@ -10,7 +10,7 @@ function sketch(data, holder) {
     p.draw = function() {
       p.background(0);
       p.fill(255);
-      p.ellipse(data.x, data.y,50,50);
+      p.ellipse(p.width - data.x, p.height - data.y,50,50);
     };
 
   };
