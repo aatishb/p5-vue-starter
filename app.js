@@ -25,9 +25,9 @@ Vue.component('p5', {
     },
 
     loadSketch: function() {
-      let local = this.data;
+      let data = this.data;
       let holder = this.$refs.holder;
-      let myp5 = new p5(sketch(local, holder));
+      let myp5 = new p5(sketch(data, holder));
     }
   },
 

@@ -1,5 +1,5 @@
 // p5 sketch goes here
-function sketch(local, holder) {
+function sketch(data, holder) {
   return function( p ) { // p could be any variable name
     p.setup = function() {
       let canvas = p.createCanvas(400, 200);
@@ -9,7 +9,7 @@ function sketch(local, holder) {
     p.draw = function() {
       p.background(0);
       p.fill(255);
-      p.rect(local.x, local.y,50,50);
+      p.rect(data.x, data.y,50,50);
     };
   };
 }
