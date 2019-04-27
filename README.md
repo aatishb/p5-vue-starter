@@ -6,10 +6,9 @@ This is an example of how to use [Vue.js](https://vuejs.org/) to bind multiple [
 
 We can load in a component with the following command:
 
-``
+```
 <p5 src="./sketch.js" :data="sourceData"></p5>
-
-``
+```
 
 where `sketch.js` points to the p5 code, and the sketch is [bound](https://v1.vuejs.org/guide/syntax.html) to a `sourceData` object.
 
