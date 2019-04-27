@@ -1,5 +1,7 @@
 # p5-vue-starter
 
+[Try it out!](https://aatishb.com/p5-vue-starter/)
+
 This is an example of how to use [Vue.js](https://vuejs.org/) to bind multiple [p5.js](https://p5js.org/) sketches together, so that they can share data with each other and with other components in a single document.
 
 In this example, the `sourceData` object holds an x & y position and is stored in a Vue instance. You can think of this like the top layer, which is the [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth) for all shared, dynamic variables. You can inspect this data in the console by typing `app.sourceData.x` or `app.sourceData.y`.
