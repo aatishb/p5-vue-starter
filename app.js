@@ -1,4 +1,5 @@
-Vue.component('p5-sketch', {
+// defining p5 component
+Vue.component('p5', {
 
   template: '<div ref="holder"></div>',
 
