@@ -17,6 +17,7 @@ function sketch(parent) {
     };
 
     p.mouseDragged = function() {
+      // check that input came from within this canvas
       if (0 < p.mouseX && p.mouseX < p.width && 0 < p.mouseY && p.mouseY < p.height)
       {
         parent.$emit('update:x', p.mouseX);
