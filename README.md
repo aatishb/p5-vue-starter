@@ -24,7 +24,7 @@ where `sketch.js` points to the file containing the p5 code (written in ['instan
 
 We can then access the data in the p5 sketch using the variable `parent.data`. Since this is an object, `parent.data.x` and `parent.data.y` will give you the individual x & y values.
 
-Ideally, the sketches should not modify the `data` directly, in keeping with the principle of [one-way data flow](https://vuejs.org/v2/guide/components-props.html#One-Way-Data-Flow). Although this will technically work (i.e. if you modify the parent data in the child sketch, the other components will react accordingly), this is considered a [bad practice](https://antenna.io/blog/2018/01/state-management-in-vue-js) in Vue as it can easily lead to bugs.
+**Tip:** Ideally, the sketches should not modify the `data` directly, in keeping with the principle of [one-way data flow](https://vuejs.org/v2/guide/components-props.html#One-Way-Data-Flow). Although this will technically work (i.e., if you modify the parent data in the child sketch, the other components will react accordingly), this is considered a [bad practice](https://antenna.io/blog/2018/01/state-management-in-vue-js) in Vue as it can easily lead to bugs.
 
 
 ## Two Way Binding Between Parent & p5 Sketch
@@ -44,7 +44,7 @@ parent.$emit('update:x', 100);
 ```
 which updates the value of `data.x` to 100. Here's [an example](https://aatishb.com/p5-vue-starter/two-way-binding/) of two way binding in action.
 
-**Heads up:** Be careful with two way binding! It's easy to accidentally create a situation where your sketches are sending conflicting update messages. If you are using mouse/touch input, it's a good idea to check that the input is coming from within the canvas of your sketch before responding to it, like in [this example](https://github.com/aatishb/p5-vue-starter/blob/master/two-way-binding/sketch1.js#L20-L21).
+**Heads up:** Be careful with two way binding! It's easy to accidentally create a situation where your sketches are sending conflicting update messages. If you are using mouse/touch input, it's a good idea to check that the input is coming from within the canvas of your sketch before sending an update event, like in [this example](https://github.com/aatishb/p5-vue-starter/blob/master/two-way-binding/sketch1.js#L20-L21).
 
 ## No Binding Between Parent & p5 Sketch
 
