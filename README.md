@@ -26,6 +26,7 @@ We can then access the data in the p5 sketch using the variable `parent.data`. S
 
 Ideally, the sketches should not modify the `data` directly, in keeping with the principle of [one-way data flow](https://vuejs.org/v2/guide/components-props.html#One-Way-Data-Flow). Although this will technically work (i.e. if you modify the parent data in the child sketch, the other components will react accordingly), this is considered a [bad practice](https://antenna.io/blog/2018/01/state-management-in-vue-js) in Vue as it can easily lead to bugs.
 
+
 ## Two Way Binding Between Parent & p5 Sketch
 
 Sometimes, we might want two-way communication between the p5 sketches and the parent, where the sketches can react to the data *and* update the data as well. Instead of directly modifying the data object from the sketch, a better practice is for the sketch component to emit an update event which asks the top layer to change the data. We listen for this event in the top layer, and respond by updating the data.
@@ -42,6 +43,8 @@ Now, in the p5 code, if we want to change the data, we can emit an update event 
 parent.$emit('update:x', 100);
 ```
 which updates the value of `data.x` to 100. Here's [an example](https://aatishb.com/p5-vue-starter/two-way-binding/) of two way binding in action.
+
+**Heads up:** Be careful with two way binding! It's easy to accidentally create a situation where your sketches are sending conflicting update messages. If you are using mouse/touch input, it's a good idea to check that the input is coming from within the canvas of your sketch before responding to it, like in [this example](https://github.com/aatishb/p5-vue-starter/blob/master/two-way-binding/sketch1.js#L20-L21).
 
 ## No Binding Between Parent & p5 Sketch
 
