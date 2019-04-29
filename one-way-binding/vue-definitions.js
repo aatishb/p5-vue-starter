@@ -1,8 +1,15 @@
+// data object is stored in the top layer / vue instance
+// and can be accessed by components that are bound to it
+let data = {
+  x: 200,
+  y: 100
+}
+
 // Defines a Vue <p5> Component
 
 Vue.component('p5', {
 
-  template: '<div ref="holder"></div>',
+  template: '<div></div>',
 
   props: ['src','data'],
 
@@ -27,9 +34,7 @@ Vue.component('p5', {
     },
 
     loadSketch: function() {
-      let data = this.data;
-      let holder = this.$refs.holder;
-      let myp5 = new p5(sketch(data, holder));
+      let myp5 = new p5(sketch(this));
     }
   },
 
@@ -44,15 +49,6 @@ Vue.component('p5', {
 var app = new Vue({
   el: '#root',
 
-  data: {
-    // Edit sourceData to store any 'global' variables
-    // i.e. data that will be accessible to multiple components in your page
-    // You should not store any local data here
-    // i.e. data that is specific to a single component
-    sourceData: {
-      x: 200,
-      y: 100
-    }
-  }
+  data: {data}
 
 });
