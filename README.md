@@ -6,11 +6,11 @@ This is an example of how to use [Vue.js](https://vuejs.org/) to bind multiple [
 - [One way binding](https://aatishb.com/p5-vue-starter/one-way-binding/)
 - [Two way binding](https://aatishb.com/p5-vue-starter/two-way-binding/)
 
-In these examples, the `data` object holds an x & y position and is defined in the [Vue instance](https://github.com/aatishb/p5-vue-starter/blob/master/one-way-binding/vue-definitions.js#L1-L6). You can think of the Vue instance as the 'parent' or the top layer, and it holds the [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth) for all shared, dynamic variables. You can inspect this data in the console by typing `app.data.x` or `app.data.y`.
+In these examples, the `data` object is defined in the [Vue instance](https://github.com/aatishb/p5-vue-starter/blob/master/one-way-binding/vue-definitions.js#L1-L6), and it holds an x & y position. You can think of the Vue instance as the 'parent' or the top layer, and this is where we store shared data that we want to be accessible to multiple components. You can inspect this data in the console by typing `app.data.x` or `app.data.y`.
 
-The input sliders are bound to this data, meaning the slider & data variables are automatically kept in sync with each other, so that changes to one automatically affect the other. You can test this by opening the console and typing `app.data.x = 100` and notice that the slider immediately updates.
+The input sliders are [bound to this data](https://vuejs.org/v2/guide/forms.html), meaning the slider & data variables are automatically kept in sync with each other, so that changes to one automatically affect the other. You can test this by opening the console and typing `app.data.x = 100` and notice that the slider immediately updates.
 
-Each p5 sketch is loaded using a custom `<p5>` Vue component. The sketches can access `data` as a property. So, if we move the sliders, or update the value of `app.data.x`, both p5 sketches will access the updated data.
+Each p5 sketch is loaded using a custom `<p5>` Vue component. Any variables defined in the p5 sketch are private to that sketch and can't be accessed outside it. However, the sketches can access `data`. So, if we move the sliders, or update the value of `app.data.x`, both p5 sketches will access the updated data.
 
 ## One Way Binding Between Parent & p5 Sketch
 
@@ -24,11 +24,11 @@ where `sketch.js` points to the file containing the p5 code (written in ['instan
 
 We can then access the data in the p5 sketch using the variable `parent.data`. Since this is an object, `parent.data.x` and `parent.data.y` will give you the individual x & y values.
 
-Ideally, the sketches should not modify the `data` directly, in keeping with the principle of [one-way data flow](https://vuejs.org/v2/guide/components-props.html#One-Way-Data-Flow). Although this will technically work (i.e. if you modify the parent data in the child sketch, the other components will react accordingly), this is considered an [anti-pattern in Vue](https://antenna.io/blog/2018/01/state-management-in-vue-js) as it can easily lead to bugs.
+Ideally, the sketches should not modify the `data` directly, in keeping with the principle of [one-way data flow](https://vuejs.org/v2/guide/components-props.html#One-Way-Data-Flow). Although this will technically work (i.e. if you modify the parent data in the child sketch, the other components will react accordingly), this is considered a [bad practice](https://antenna.io/blog/2018/01/state-management-in-vue-js) in Vue as it can easily lead to bugs.
 
 ## Two Way Binding Between Parent & p5 Sketch
 
-Sometimes, we might want two-way communication between the p5 sketches and the parent, where the sketches can react to the data *and* update the data as well. Instead of directly modifying the data object from the sketch, a better practice is for the sketch component to emit an update event which asks the top layer to change the data. We listen for this event in the top layer, and respond by updating the data. 
+Sometimes, we might want two-way communication between the p5 sketches and the parent, where the sketches can react to the data *and* update the data as well. Instead of directly modifying the data object from the sketch, a better practice is for the sketch component to emit an update event which asks the top layer to change the data. We listen for this event in the top layer, and respond by updating the data.
 
 To set this up in Vue, we need to create the p5 component as follows:
 

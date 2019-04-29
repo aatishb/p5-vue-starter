@@ -1,5 +1,5 @@
-// data object is stored in the top layer / vue instance
-// and can be accessed by components that are bound to it
+// this data object stores variables that we want to share between components
+// this is not a good place to store data that doesn't need to be shared
 let data = {
   x: 200,
   y: 100
