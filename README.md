@@ -46,3 +46,7 @@ which updates the value of `data.x` to 10. Here's [an example](https://aatishb.c
 ## No Binding Between Parent & p5 Sketch
 
 If you want to create multiple *independent* p5 canvases on a single page, and you don't need to share data between components, then using a framework like Vue is probably overkill. Instead, take a look at [this tutorial](http://joemckaystudio.com/multisketches/).
+
+## Code
+
+Code available on [Github](https://github.com/aatishb/p5-vue-starter)
