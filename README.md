@@ -8,7 +8,7 @@ This is an example of how to use [Vue.js](https://vuejs.org/) to bind multiple [
 
 In these examples, the `data` object is defined in the [Vue instance](https://github.com/aatishb/p5-vue-starter/blob/master/one-way-binding/vue-definitions.js#L47-L52), and it holds an x & y position. You can think of the Vue instance as the 'parent' or the top layer, and this is where we store shared data that we want to be accessible to multiple components. You can inspect this data in the console by typing `app.data.x` or `app.data.y`.
 
-The input sliders are [bound to this data](https://vuejs.org/v2/guide/forms.html), meaning the slider & data variables are automatically kept in sync with each other, so that changes to one automatically affect the other. You can test this by opening the console and typing `app.data.x = 100` and notice that the slider immediately updates.
+The input sliders are [bound to this data](https://vuejs.org/v2/guide/forms.html), meaning the slider & data variables are automatically kept in sync with each other, so that changes to one automatically affect the other. You can test this by opening the console and typing `app.data.x = 100` and notice that the slider immediately updates. (You can learn more about how to bind an html input to a data variable [here](https://vuejs.org/v2/guide/forms.html) in the Vue documentation.)
 
 Each p5 sketch is loaded using a custom `<p5>` Vue component. Any variables defined in the p5 sketch are private to that sketch and can't be accessed outside it. However, the sketches can access `data`. So, if we move the sliders, or update the value of `app.data.x`, both p5 sketches will access the updated data.
 
