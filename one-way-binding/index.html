@@ -25,8 +25,7 @@
   y: <input v-model="data.y">
 
   <!-- Access data in html with double curly braces {{ }} -->
-  <!-- You can even include javascript here, like below -->
-  <h3>The value of x is {{Math.round(data.x)}} and y is {{Math.round(data.y)}}.</h3>
+  <h3>The value of x is {{data.x}} and y is {{data.y}}.</h3>
 
   <!-- Vue components for p5 sketches, also bound to data -->
   <p5 src="./sketch1.js" :data="data"></p5>
