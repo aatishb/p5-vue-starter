@@ -1,6 +1,6 @@
 # p5-vue-starter
 
-This is an example of how to use [Vue.js](https://vuejs.org/) to bind multiple [p5.js](https://p5js.org/) sketches together, so that they can share data with each other and with other components in a single document. You can use this to build interactive webpages where input elements like sliders and buttons can affect one or more p5 canvases on the page, or p5 sketches can affect elements on the page.
+This is an example of how to use [Vue.js](https://vuejs.org/) to bind multiple [p5.js](https://p5js.org/) sketches together, so that they can share data with each other and with other components in a single document. You can use this to build interactive webpages where input elements like sliders, buttons, or textboxes can affect one or more p5 canvases on the page, or p5 sketches can affect elements on the page.
 
 ## Try it out
 - [One way binding](https://aatishb.com/p5-vue-starter/one-way-binding/)
