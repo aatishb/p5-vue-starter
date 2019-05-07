@@ -10,14 +10,19 @@
 <body>
 
 <div id="root"> <!-- Vue can only access things contained within this div -->
+
   <h1>One Way Binding Example</h1>
 
   <h2>Slide me!</h2>
+
   <!-- Some input elements that are bound to data -->
   <input type="range" min="0" max="400" step="1" v-model="data.x" ></input>
   <input type="range" min="0" max="200" step="1" v-model="data.y"> </input>
 
-  <h2>p5 canvases</h2>
+  <!-- Access data in html with double curly braces {{ }} -->
+  <!-- You can even include javascript here, like below -->
+  <h3>The value of x is {{Math.round(data.x)}} and y is {{Math.round(data.y)}}.</h3>
+
   <!-- Vue components for p5 sketches, also bound to data -->
   <p5 src="./sketch1.js" :data="data"></p5>
   <p5 src="./sketch2.js" :data="data"></p5>

@@ -13,7 +13,8 @@ function sketch(parent) {
       p.background(0);
       p.fill(255);
       p.rect(parent.data.x, parent.data.y, 50, 50);
-      p.text('Drag me!', 0, 10);
+      p.fill(0);
+      p.text('Drag\nme!', parent.data.x - 12, parent.data.y - 5);
     };
 
     p.mouseDragged = function() {

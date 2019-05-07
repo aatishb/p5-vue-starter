@@ -10,8 +10,9 @@ function sketch(parent) {
     p.draw = function() {
       p.background(0);
       p.fill(255);
-      p.ellipse(p.width - parent.data.x, p.height - parent.data.y,50,50);
-      p.text('Drag me!', 0, 10);
+      p.ellipse(p.width - parent.data.x, p.height - parent.data.y, 50, 50);
+      p.fill(0);
+      p.text('Drag\nme!', p.width - parent.data.x - 12, p.height - parent.data.y - 5);
     };
 
     p.mouseDragged = function() {
