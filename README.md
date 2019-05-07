@@ -1,12 +1,12 @@
 # p5-vue-starter
 
-This is an example of how to use [Vue.js](https://vuejs.org/) to bind multiple [p5.js](https://p5js.org/) sketches together, so that they can share data with each other and with other components in a single document.
+This is an example of how to use [Vue.js](https://vuejs.org/) to bind multiple [p5.js](https://p5js.org/) sketches together, so that they can share data with each other and with other components in a single document. You can use this to build interactive webpages where input elements ike sliders and buttons can affect one or more p5 canvases on the page, or p5 sketches can affect elements on the page.
 
 ## Try it out
 - [One way binding](https://aatishb.com/p5-vue-starter/one-way-binding/)
 - [Two way binding](https://aatishb.com/p5-vue-starter/two-way-binding/)
 
-In these examples, the `data` object is defined in the [Vue instance](https://github.com/aatishb/p5-vue-starter/blob/master/one-way-binding/vue-definitions.js#L1-L6), and it holds an x & y position. You can think of the Vue instance as the 'parent' or the top layer, and this is where we store shared data that we want to be accessible to multiple components. You can inspect this data in the console by typing `app.data.x` or `app.data.y`.
+In these examples, the `data` object is defined in the [Vue instance](https://github.com/aatishb/p5-vue-starter/blob/master/one-way-binding/vue-definitions.js#L47-L52), and it holds an x & y position. You can think of the Vue instance as the 'parent' or the top layer, and this is where we store shared data that we want to be accessible to multiple components. You can inspect this data in the console by typing `app.data.x` or `app.data.y`.
 
 The input sliders are [bound to this data](https://vuejs.org/v2/guide/forms.html), meaning the slider & data variables are automatically kept in sync with each other, so that changes to one automatically affect the other. You can test this by opening the console and typing `app.data.x = 100` and notice that the slider immediately updates.
 
@@ -14,7 +14,7 @@ Each p5 sketch is loaded using a custom `<p5>` Vue component. Any variables defi
 
 ## One Way Binding Between Parent & p5 Sketch
 
-In [this example](https://aatishb.com/p5-vue-starter/one-way-binding/), the p5 sketch reacts to data in the top layer. The p5 sketches are loaded in a custom component, created using the following command:
+In [this example](https://aatishb.com/p5-vue-starter/one-way-binding/), the p5 sketch reacts to data in the top layer. The p5 sketches are loaded in a [custom component](https://vuejs.org/v2/guide/components.html), created using the following command:
 
 ```
 <p5 src="./sketch.js" :data="data"></p5>
@@ -29,13 +29,15 @@ We can then access the data in the p5 sketch using the variable `parent.data`. S
 
 ## Two Way Binding Between Parent & p5 Sketch
 
-Sometimes, we might want two-way communication between the p5 sketches and the parent, where the sketches can react to the data *and* update the data as well. Instead of directly modifying the data object from the sketch, a better practice is for the sketch component to emit an update event which asks the top layer to change the data. We listen for this event in the top layer, and respond by updating the data.
+Sometimes, we might want two-way communication between the p5 sketches and the parent, where the sketches can react to the data *and* update the data as well. Instead of directly modifying the data object from the sketch, a better practice is for the sketch component to emit an update event which asks the top layer to change the data. We listen for this event in the top layer, and respond by updating the data. This sounds complicated, but Vue makes this quite easy to do.
 
 To set this up in Vue, we need to create the p5 component as follows:
 
 ```
 <p5 src="./sketch.js" :data="data" v-bind.sync="data"></p5>
 ```
+
+Where the [.sync](https://vuejs.org/v2/guide/components-custom-events.html#sync-Modifier) part tells the parent to listen to events from the p5 component and update the data accordingly.
 
 Now, in the p5 code, if we want to change the data, we can emit an update event like this:
 
@@ -48,7 +50,13 @@ which updates the value of `data.x` to 100. Here's [an example](https://aatishb.
 
 ## No Binding Between Parent & p5 Sketch
 
-If you want to create multiple *independent* p5 canvases on a single page, and you don't need to share data between components, then using a framework like Vue is probably overkill. Instead, take a look at [this tutorial](http://joemckaystudio.com/multisketches/).
+If you want to create multiple *independent* p5 canvases on a single page, and you don't need to share data between components, then using a framework like Vue is probably overkill. Instead, take a look at [this tutorial](http://joemckaystudio.com/multisketches/). Howevever, you could do this here like this:
+
+```
+<p5 src="./sketch.js"></p5>
+```
+where we are loading the component but not passing it any data.
+
 
 ## Code
 
