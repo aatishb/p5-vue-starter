@@ -19,6 +19,11 @@
   <input type="range" min="0" max="400" step="1" v-model="data.x" ></input>
   <input type="range" min="0" max="200" step="1" v-model="data.y"> </input>
 
+  <h2>Edit me!</h2>
+  <!-- Some input textboxes that are bound to data -->
+  x: <input v-model="data.x">
+  x: <input v-model="data.y">
+
   <!-- Access data in html with double curly braces {{ }} -->
   <!-- You can even include javascript here, like below -->
   <h3>The value of x is {{Math.round(data.x)}} and y is {{Math.round(data.y)}}.</h3>

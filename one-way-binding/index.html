@@ -15,9 +15,14 @@
 
   <h2>Slide me!</h2>
 
-  <!-- Some input elements that are bound to data -->
+  <!-- Some input sliders that are bound to data -->
   <input type="range" min="0" max="400" step="1" v-model="data.x" ></input>
   <input type="range" min="0" max="200" step="1" v-model="data.y"> </input>
+
+  <h2>Edit me!</h2>
+  <!-- Some input textboxes that are bound to data -->
+  x: <input v-model="data.x">
+  x: <input v-model="data.y">
 
   <!-- Access data in html with double curly braces {{ }} -->
   <!-- You can even include javascript here, like below -->
