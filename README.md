@@ -60,11 +60,11 @@ where we are loading the component but not passing it any data.
 
 ## Data Watching
 
-OK, so you've bound a p5 sketch to some data, using the method above. Say you want your sketch to run some code whenever the data changes. Normally, you would check for a change in the data on each frame of the draw() loop, by comparing the current data value to the previous data value. If you see a change, then you run your code.
+OK, so you've bound a p5 sketch to some data using the method above. Now, say you want your sketch to run some code whenever the data changes. Normally, you might do this by checking for a change in the data on each frame of the draw() loop. This approach can be computationally expensive, because it requires making a comparison for each frame of your draw loop (or about 60 comparisons a second).
 
-However, this approach can be computationally expensive, because it requires you to do a comparison for every frame of your draw loop (about 60 comparisons a second). Vue provides a more efficient solution. By using a [watcher](https://vuejs.org/v2/guide/computed.html#Watchers), we can execute code *only* when the data changes. Watchers are useful when you want to perform expensive computations in response to changing data.
+Vue provides a more efficient solution. By using a [watcher](https://vuejs.org/v2/guide/computed.html#Watchers), we can execute code *only* when the data changes. Watchers are useful when you want to perform expensive computations in response to changing data.
 
-To do this, we've added a custom p5 function called `dataChanged()`. Any code that you run in this function will only be executed when the data changes.
+To do this, we've added a custom p5 function called `dataChanged()`. Any code placed in this function will only be executed when the data changes.
 
 ```
 p.dataChanged = function(val, oldVal) {
@@ -73,7 +73,7 @@ p.dataChanged = function(val, oldVal) {
 
 ```
 
-Here's [an example](https://github.com/aatishb/p5-vue-starter/tree/master/data-watching) where the p5 sketch is only updated when the data changes.
+Here's [an example](https://github.com/aatishb/p5-vue-starter/tree/master/data-watching) of this in action.
 
 ## Code
 
