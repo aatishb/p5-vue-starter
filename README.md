@@ -58,6 +58,19 @@ If you want to create multiple *independent* p5 canvases on a single page, and y
 where we are loading the component but not passing it any data.
 
 
+## Data Watching
+
+Let's say that you've bound a p5 data object to some data. You only want your sketch to change what it's doing when the data changes. Normally, you would check for a change in the data on each frame of the draw() loop, by comparing the current data value to the previously stored data value. If you see a change, then you run your code.
+
+However, this approach can end up being computationally expensive, because it requires you to do a comparison for every frame of your draw loop, or about 60 comparisons a second. Vue provides a more efficient solution. By using a [watcher](https://vuejs.org/v2/guide/computed.html#Watchers), we can run code *only* when the data changes. Watchers are useful when you want to perform expensive computations in response to changing data.
+
+To do this, we've added a p5 function called `dataChanged()`. Any code that you run in this function will only be executed when the data changes. Here's [an example](https://github.com/aatishb/p5-vue-starter/tree/master/data-watching) where the p5 sketch is only updated when the data changes.
+```
+p.dataChanged = function(val, oldVal) {
+};
+
+```
+
 ## Code
 
 Code available on [Github](https://github.com/aatishb/p5-vue-starter)

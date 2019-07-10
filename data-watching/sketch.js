@@ -10,19 +10,20 @@ function sketch(parent) { // we pass the sketch data from the parent
       let canvas = p.createCanvas(400, 200);
       canvas.parent(parent.$el);
       p.rectMode(p.CENTER);
+      p.fill(255);
+      p.background(0);
+      p.rect(parent.data.x, parent.data.y, 50, 50);
+      p.noLoop();
     };
 
     p.draw = function() {
-      p.background(0);
-      p.fill(255);
-      p.rect(parent.data.x, parent.data.y, 50, 50);
     };
 
     // this is a new function we've added to p5
     // it runs only if the data changes
     p.dataChanged = function(val, oldVal) {
-      // console.log('data changed');
-      // console.log('x: ', val.x, 'y: ', val.y);
+      p.background(0);
+      p.rect(val.x, val.y, 50, 50);
     };
 
   };

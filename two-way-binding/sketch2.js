@@ -29,5 +29,3 @@ function sketch(parent) { // we pass the sketch data from the parent
 
   };
 }
-
-console.log('p5 script 2 loaded');

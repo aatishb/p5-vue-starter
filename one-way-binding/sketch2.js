@@ -16,7 +16,12 @@ function sketch(parent) { // we pass the sketch data from the parent
       p.ellipse(p.width - parent.data.x, p.height - parent.data.y,50,50);
     };
 
+    // this is a new function we've added to p5
+    // it runs only if the data changes
+    p.dataChanged = function(val, oldVal) {
+      // console.log('data changed');
+      // console.log('x: ', val.x, 'y: ', val.y);
+    };
+
   };
 }
-
-console.log('p5 script 2 loaded');

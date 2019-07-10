@@ -11,11 +11,11 @@
 
 <div id="root"> <!-- Vue can only access things contained within this div -->
 
-  <h1>Two Way Binding Example</h1>
+  <h1>Using a Data Watcher</h1>
 
   <h2>Slide me!</h2>
 
-  <!-- Some input elements that are bound to data -->
+  <!-- Some input sliders that are bound to data -->
   <input type="range" min="0" max="400" step="1" v-model="data.x" ></input>
   <input type="range" min="0" max="200" step="1" v-model="data.y"> </input>
 
@@ -27,11 +27,15 @@
   <!-- Access data in html with double curly braces {{ }} -->
   <h3>The value of x is {{data.x}} and y is {{data.y}}.</h3>
 
-  <!-- Vue components for p5 sketches, also bound to data -->
-  <p5 src="./sketch1.js" :data="data" v-bind.sync="data"></p5>
-  <p5 src="./sketch2.js" :data="data" v-bind.sync="data"></p5>
 
-  <p><a href="https://github.com/aatishb/p5-vue-starter/tree/master/two-way-binding">Source Code</a></p>
+  <!-- Vue components for p5 sketches, also bound to data -->
+  <p5 src="./sketch.js" :data="data"></p5>
+
+  <p>In this p5 program, we have disabled the draw() loop. So how is the animation being updated? A custom dataChanged() function is run every time that the data changes, which updates the canvas.</p>
+
+  <p>This is possible thanks to Vue's watch option. Data watchers are used when you want to perform an computationally expensive operation in response to changing data. The alternative approach would be to check for a change in data on each frame of the draw() loop, which is less efficient.</p>
+
+  <p><a href="https://github.com/aatishb/p5-vue-starter/tree/master/data-watching">Source Code</a></p>
 
 </div>
 
