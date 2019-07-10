@@ -73,7 +73,7 @@ p.dataChanged = function(val, oldVal) {
 
 ```
 
-Here's [an example](https://github.com/aatishb/p5-vue-starter/tree/master/data-watching) of this in action.
+Here's [an example](https://aatishb.com/p5-vue-starter/data-watching/) of this in action.
 
 ## Code
 

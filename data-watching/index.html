@@ -11,7 +11,7 @@
 
 <div id="root"> <!-- Vue can only access things contained within this div -->
 
-  <h1>Using a Data Watcher</h1>
+  <h1>Data Watching Example</h1>
 
   <h2>Slide me!</h2>
 
@@ -33,7 +33,7 @@
 
   <p>In this p5 program, we have disabled the draw() loop. So how is the animation being updated? A custom dataChanged() function is run every time that the data changes, which updates the canvas.</p>
 
-  <p>This is possible thanks to Vue's watch option. Data watchers are used when you want to perform an computationally expensive operation in response to changing data. The alternative approach would be to check for a change in data on each frame of the draw() loop, which is less efficient.</p>
+  <p>This is possible thanks to Vue's ability to 'watch' data. Data watchers are useful if you want to perform a computationally expensive operation in response to changing data. The alternative approach would be to check for a change in data on each frame of the draw() loop, which can be less efficient.</p>
 
   <p><a href="https://github.com/aatishb/p5-vue-starter/tree/master/data-watching">Source Code</a></p>
 
