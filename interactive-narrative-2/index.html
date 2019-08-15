@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Load in libraries here -->
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+</head>
+
+<body>
+
+<div id="story">
+
+  <!-- start of first scene -->
+  <div v-if="scene == 1" :id="scene">
+
+    <h1>Scene 1</h1>
+
+    <p>One Fish</p>
+    <p5 src="./sketch1.js"></p5>
+
+    <p>Two Fish</p>
+    <p5 src="./sketch2.js"></p5>
+
+    </br>
+
+    <button v-on:click="scene += 1">Next Scene</button>
+
+  </div>
+  <!-- end of first scene -->
+
+  <!-- start of second scene -->
+  <div v-if="scene == 2" :id="scene">
+
+    <h1>Scene 2</h1>
+
+    <p>Red Fish</p>
+
+    <p>Blue Fish</p>
+
+    <p5 src="./sketch3.js"></p5>
+
+    </br>
+
+    <button onClick="parent.location='index.html'">Restart</button>
+
+    <p><a href="https://github.com/aatishb/p5-vue-starter/tree/master/interactive-narrative-2">Source Code</a></p>
+
+
+  </div>
+  <!-- end of second scene -->
+
+</div>
+
+<script src="p5-vue-component.js"></script>
+<script src="scene-logic.js"></script>
+
+</body>
+</html>
