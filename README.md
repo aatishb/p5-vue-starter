@@ -5,6 +5,8 @@ This is an example of how to use [Vue.js](https://vuejs.org/) to bind multiple [
 ## Try it out
 - [One way binding](https://aatishb.com/p5-vue-starter/one-way-binding/)
 - [Two way binding](https://aatishb.com/p5-vue-starter/two-way-binding/)
+- [Data Watching](https://aatishb.com/p5-vue-starter/data-watching/)
+- [Interactive Narrative](https://aatishb.com/p5-vue-starter/interactive-narrative/)
 
 In these examples, the `data` object is defined in the [Vue instance](https://github.com/aatishb/p5-vue-starter/blob/master/one-way-binding/vue-definitions.js#L47-L52), and it holds an x & y position. You can think of the Vue instance as the 'parent' or the top layer, and this is where we store shared data that we want to be accessible to multiple components. You can inspect this data in the console by typing `app.data.x` or `app.data.y`.
 

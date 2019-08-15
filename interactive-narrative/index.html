@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Load in libraries here -->
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+</head>
+
+<body>
+
+<div id="story">
+
+  <p5 src="./sketch.js" :data="{scene: scene}"></p5>
+
+  <!-- start of first scene -->
+  <div v-if="scene == 1" :id="scene">
+
+    <h1>Scene {{scene}}</h1>
+    <p>Hello traveller. What is your name?</p>
+
+    <input v-model="name" placeholder="Type in your name">
+    <button v-on:click="scene += 1">Next Scene</button>
+
+  </div>
+  <!-- end of first scene -->
+
+  <!-- start of second scene -->
+  <div v-if="scene == 2" :id="scene">
+
+    <h1>Scene {{scene}}</h1>
+    <p>{{name}}, you are drifting in space.</p>
+
+    <button v-on:click="scene = 3">Drift towards Earth</button>
+    <button v-on:click="scene = 4">Drift towards the Sun</button>
+
+  </div>
+  <!-- end of second scene -->
+
+
+  <!-- start of third scene -->
+  <div v-if="scene == 3" :id="scene">
+
+    <h1>Scene {{scene}}</h1>
+    <p>{{name}}, you are drifting towards Earth.</p>
+
+    <button v-on:click="scene = 5">Stop Drifting</button>
+
+  </div>
+  <!-- end of third scene -->
+
+
+  <!-- start of fourth scene -->
+  <div v-if="scene == 4" :id="scene">
+
+    <h1>Scene {{scene}}</h1>
+    <p>{{name}}, you are drifting towards the Sun.</p>
+
+    <button v-on:click="scene = 5">Final Scene</button>
+
+  </div>
+  <!-- end of fourth scene -->
+
+  <!-- start of fifth scene -->
+  <div v-if="scene == 5" :id="scene">
+
+    <h1>Scene {{scene}}</h1>
+    <p>{{name}}, you have arrived.</p>
+    <p>THE END.</p>
+
+    <button onClick="parent.location='index.html'">Play Again</button>
+
+  </div>
+  <!-- end of fifth scene -->
+
+</div>
+
+<script src="p5-vue-component.js"></script>
+<script src="scene-logic.js"></script>
+
+</body>
+</html>
