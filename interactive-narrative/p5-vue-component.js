@@ -43,6 +43,16 @@ Vue.component('p5', {
   },
 
   watch: {
+    // this seems a bit hacky
+    // when using v-if on a parent div,
+    // vue doesn't replace the component but instead just changes the variables
+    // its bound to. So we need to watch for the src variable to
+
+    src: function() {
+      this.$el.innerHTML = '';
+      this.loadScript(this.src, this.loadSketch);
+    },
+
     data: {
       handler: function(val, oldVal) {
         if(this.myp5.dataChanged) {
