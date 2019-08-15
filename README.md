@@ -6,8 +6,8 @@ This is an example of how to use [Vue.js](https://vuejs.org/) to bind multiple [
 - [One way binding](https://aatishb.com/p5-vue-starter/one-way-binding/)
 - [Two way binding](https://aatishb.com/p5-vue-starter/two-way-binding/)
 - [Data Watching](https://aatishb.com/p5-vue-starter/data-watching/)
-- [Interactive Narrative](https://aatishb.com/p5-vue-starter/interactive-narrative/)
-- [Interactive Narrative 2](https://aatishb.com/p5-vue-starter/interactive-narrative-2/)
+- [Interactive Narrative (Single Canvas in background)](https://aatishb.com/p5-vue-starter/interactive-narrative/)
+- [Interactive Narrative (Multiple Canvases)](https://aatishb.com/p5-vue-starter/interactive-narrative-2/)
 
 ## One Way Binding Between Parent & p5 Sketch
 
