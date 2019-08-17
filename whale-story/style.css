@@ -1,0 +1,72 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  color: rgba(220,220,220);
+  text-align: center;
+  font-family: 'Fauna One', serif;
+}
+
+body {
+  margin: 20px;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+
+
+p {
+  font-size: 2rem;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  margin-top:20px;
+  text-align:center;
+  font-weight:100;
+  font-size:7rem;
+}
+
+h2 {
+  margin-top:30px;
+  font-weight:700;
+  font-size: 1.8rem;
+  padding-bottom:20px;
+
+}
+
+h3 {
+  text-align:center;
+  font-weight:400;
+  font-size:1.2rem;
+}
+
+#title {
+  padding-bottom:20px;
+  margin-bottom:20px;
+}
+
+#title h1 {
+  margin-bottom:10px;
+}
+
+h1, h2, h3 {
+  line-height: 1.1;
+  color: '#222';
+}
+button {
+  margin-top: 1rem;
+  background: #216583;
+  color: rgba(220,220,220);
+  font-family: 'Fauna One', serif;
+  border-color: black;
+  font-size: 1.5rem;  padding: 0.5rem;  text-decoration: none;
+}
+
+ul {
+  list-style-type: none
+}

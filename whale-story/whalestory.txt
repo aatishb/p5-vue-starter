@@ -1,0 +1,139 @@
+Whale Story
+
+
+* Scene 1:
+
+Hello. You have been turned into a whale.
+
+What kind of whale would you rather be?
+
+  - a humpback whale 🐋
+  - a blue whale 🐳
+
+[Next]
+
+
+* Scene 2:
+
+Congratulations! You are now a [whale type].
+
+A swarm of fish swim by.
+In the background, you hear a faint whale song. (oooooOOOOOOOOooooooo)
+
+What would you like to do?
+
+  - Eat the fish (50% --> poison fish, 50% --> eat more fish)
+  - Swim towards the whale song
+
+
+* Scene 3:
+
+choice: eat the fish
+
+Mmmm. That was delicious.
+
+  - Eat more fish (50% --> poison fish, 50% --> eat more fish)
+  - Swim towards the whale song
+
+
+* Scene 4:
+
+choice: Eat more Fish
+
+Uh-oh. One of the fish you ate was a poisonous puffer fish. You start to feel dizzy.
+
+  - Keep swimming forwards
+  - Go up for some air
+
+
+* Scene 5
+
+choice: Go up for some air
+
+You arrive at the surface and spout water through your blowhole.
+
+People in a boat see you and wave.
+
+You feel much better.
+
+ - Go back down
+
+
+ * Scene 6:
+
+choice: go back down | keep swimming forwards | swim towards the whale song
+
+ooooooooOOOOOOOOoooooooOOOOOOOOoooooooooo
+
+
+- Keep swimming
+
+
+* Scene 7:
+
+choice: keep swimming
+
+The sun has set. It is now super dark. You are somewhat lost and no longer hear any whale song.
+
+- Sing a whale song
+- Wait
+
+
+* Scene 8
+
+choice: sing a whale song
+
+Another whale hears your whale song.
+
+- Approach the other whale.
+- I'm shy. I'll just stay here for a bit.
+
+
+* Scene 9
+
+choice: approach the other whale
+
+Both whales meet and then swim away into the sunset.
+
+THE END.
+
+[Play again.]
+
+[How was this created?]
+
+
+* Scene 10
+
+choice: I'll wait for the other whale to approach me.
+
+Both whales meet and then swim away into the sunset.
+
+THE END.
+
+[Play again. -- reloads the page]
+
+[How was this created?]
+
+
+* Credits
+
+Option: How was this created?
+
+<button>Play Again</button>
+
+This is an example of an interactive narrative. The animations were created using p5.js, a beginner-friendly creative coding library. The interaction was handled using Vue.js, a library that helps you add interaction to web pages.
+
+You can find the source code for this example here.
+
+How to remix this:
+  - Download the code and run it on your own computer.
+  - Modify the story
+  - Change the animations
+  - Publish your own story
+
+This work is released into the public domain, so you can do what you like with it, and use it however you want.
+
+Happy Tinkering!
+
+
+

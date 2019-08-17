@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Load in libraries here -->
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Fauna+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+</head>
+
+<body>
+
+<div id="story">
+
+  <p5 src="./sketch.js" :data="sketch"></p5>
+
+
+  <!-- start of title scene -->
+  <div v-if="sketch.scene == 0">
+
+    <div id="title">
+      <h1>Whale Story</h1>
+      <h3>A playable narrative built with p5.js and Vue.js</h3>
+      <button @click="{sketch.scene += 1;}">Play.</button>
+    </div>
+
+  </div>
+  <!-- end of title scene -->
+
+
+  <!-- start of first scene -->
+  <div v-if="sketch.scene == 1">
+
+    <p>Hello. You have been turned into a whale.</p>
+
+    <br>
+    <br>
+    <br>
+
+    <p>What kind of whale would you rather be?</p>
+
+    <form>
+      <p><input type="radio" value="🐋" v-model="sketch.whale">🐋 a humpback whale</p>
+      <p><input type="radio" value="🐳" v-model="sketch.whale">🐳 a blue whale</p>
+    </form>
+
+    <button @click="if(sketch.whale) {sketch.scene += 1;}">Let's go.</button>
+
+  </div>
+  <!-- end of first scene -->
+
+  <!-- start of second scene -->
+  <div v-if="sketch.scene == 2">
+
+    <p>Congratulations! You are now a {{sketch.whale}}.</p>
+
+    <p>A swarm of fish approach.</p>
+
+    <p>In the background, you hear a faint whale song.</p>
+
+    <p>oooooOOOOOOOOooooooo</p>
+
+    <ul>
+      <li><button @click="eatFish">Eat the fish</button></li>
+      <li><button @click="sketch.scene = 6">Swim towards the whale song</button></li>
+    </ul>
+
+  </div>
+  <!-- end of second scene -->
+
+  <!-- start of third scene -->
+  <div v-if="sketch.scene == 3">
+
+    <p>Mmmmmm. That was delicious.</p>
+
+    <p>You have eaten {{sketch.fishEaten}} fish.</p>
+
+    <ul>
+      <li><button @click="eatFish">Eat the fish</button></li>
+      <li><button @click="sketch.scene = 6">Swim towards the whale song</button></li>
+    </ul>
+
+  </div>
+  <!-- end of third scene -->
+
+  <!-- start of fourth scene -->
+  <div v-if="sketch.scene == 4">
+
+    <p>Uh-oh.</p>
+    <p>One of the fish you ate was a poisonous puffer fish.</p>
+    <p>You start to feel dizzy.</p>
+
+    <ul>
+      <li><button @click="sketch.scene = 6">Just keep swimming</li>
+      <li><button @click="sketch.scene = 5">Go up for some air</li>
+    </ul>
+
+  </div>
+  <!-- end of fourth scene -->
+
+  <!-- start of fifth scene -->
+  <div v-if="sketch.scene == 5">
+
+    <p>You arrive at the surface and spout water through your blowhole.</p>
+
+    <p>People in a boat see you and wave.</p>
+
+    <p>You feel much better.</p>
+
+    <button @click="sketch.scene = 6">Swim back down</button>
+
+  </div>
+  <!-- end of fifth scene -->
+
+  <!-- start of sixth scene -->
+  <div v-if="sketch.scene == 6">
+
+    <p>The whale song grows louder.</p>
+    <p>ooooooooOOOOOOOOooooooo</p>
+
+    <button @click="sketch.scene = 7">Keep swimming</button>
+
+  </div>
+  <!-- end of sixth scene -->
+
+
+  <!-- start of sixth scene -->
+  <div v-if="sketch.scene == 7">
+
+    <p>The whale song grows even louder.</p>
+    <p>ooooooooOOOOOOOOoooooooOOOOOOOOoooooooooo</p>
+
+    <button @click="sketch.scene = 8">Keep swimming</button>
+
+  </div>
+  <!-- end of sixth scene -->
+
+
+  <!-- start of sixth scene -->
+  <div v-if="sketch.scene == 8">
+
+    <p>The whale song grows louder still.</p>
+    <p>ooooooooOOOOOOOOoooooooOOOOOOOOooooooooooOOOOOOOOoooooooooo</p>
+
+    <button @click="sketch.scene = 9">Keep swimming</button>
+
+  </div>
+  <!-- end of sixth scene -->
+
+
+  <!-- start of seventh scene -->
+  <div v-if="sketch.scene == 9">
+
+    <p>The sun has set. The ocean turns dark.</p>
+
+    <P>You are somewhat lost and no longer hear the song.</p>
+
+    <ul>
+      <li><button>Wait</button></li>
+      <li><button @click="sketch.scene = 10">Sing a whale song</button></li>
+    </ul>
+
+  </div>
+  <!-- end of seventh scene -->
+
+  <!-- start of eighth scene -->
+  <div v-if="sketch.scene == 10">
+
+    <p>It is now morning.</p>
+
+    <p>Another whale hears your whale song!!</p>
+
+    <ul>
+      <li><button @click="sketch.scene = 11">Approach the other whale.</button></li>
+      <li><button @click="sketch.scene = 12">I'm shy. I'll just stay here for a bit.</button></li>
+    </ul>
+
+  </div>
+  <!-- end of eigth scene -->
+
+  <!-- start of ninth scene -->
+  <div v-if="sketch.scene == 11">
+
+    <p>You approach the other whale.</p>
+
+    <p>"Hi!", says the other whale.</p>
+
+    <p>"Would you like to follow me to a secret underwater garden?"</p>
+
+    <ul>
+      <li><button @click="sketch.scene = 13">Swim to the garden.</button></li>
+    </ul>
+
+  </div>
+  <!-- end of ninth scene -->
+
+  <!-- start of tenth scene -->
+  <div v-if="sketch.scene == 12">
+
+    <p>The other whale approaches.</p>
+
+    <p>"Hi!", says the other whale.</p>
+
+    <p>"Would you like to follow me to a secret underwater garden?"</p>
+
+    <ul>
+      <li><button @click="sketch.scene = 13">Swim to the garden.</button></li>
+    </ul>
+
+  </div>
+  <!-- end of tenth scene -->
+
+  <!-- start of tenth scene -->
+  <div v-if="sketch.scene == 13">
+
+    <p>Together, you frolick in the garden.</p>
+
+    <h1>THE END</h1>
+
+    <ul>
+      <li><button onClick="parent.location='index.html'">Play again.</button></li>
+      <li><button @click="sketch.scene = 14">Remix This.</button></li>
+    </ul>
+
+  </div>
+  <!-- end of tenth scene -->
+
+
+
+  <!-- start of eleventh scene -->
+  <div v-if="sketch.scene == 14">
+
+    <button onClick="parent.location='index.html'">Play Again</button>
+
+    <p>This is an example of an interactive narrative.</p>
+
+    <p>You can find the source code <a href="https://github.com/aatishb/p5-vue-starter/tree/master/whale-story">here</a>.</p>
+
+    <p>To remix:</p>
+    <ul>
+      <li><p>Download the code and run it on your own computer.</p></li>
+      <li><p>Modify the story</p></li>
+      <li><p>Change the animations</p></li>
+      <li><p>Publish your own story</p></li>
+    </ul>
+
+    <p>This work is released into the public domain, so you can do what you like with it, and use it however you want.</p>
+
+    <p>Have fun!</p>
+
+  </div>
+  <!-- end of eleventh scene -->
+
+</div>
+
+<script src="p5-vue-component.js"></script>
+<script src="scene-logic.js"></script>
+
+</body>
+</html>

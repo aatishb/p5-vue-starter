@@ -8,6 +8,7 @@ This is a set of examples for how to use [Vue.js](https://vuejs.org/) and [p5.js
 - [Data Watching](https://aatishb.com/p5-vue-starter/data-watching/)
 - [Interactive Narrative (Single Canvas in background)](https://aatishb.com/p5-vue-starter/interactive-narrative/)
 - [Interactive Narrative (Multiple Canvases)](https://aatishb.com/p5-vue-starter/interactive-narrative-2/)
+- [Interactive Narrative (Whale Story)](https://aatishb.com/p5-vue-starter/whale-story/)
 
 ## One Way Binding Between Parent & p5 Sketch
 
