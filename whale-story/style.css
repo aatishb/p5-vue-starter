@@ -18,6 +18,9 @@ canvas {
   z-index: -1;
 }
 
+a {
+  color: white;
+}
 
 p {
   font-size: 2rem;
